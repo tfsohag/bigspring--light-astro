@@ -1,7 +1,6 @@
 ---
 import Logo from "@components/Logo.astro";
 import menu from "@config/menu.json";
-import { IoSearch } from "react-icons/io5/index.js";
 
 export interface ChildNavigationLink {
   name: string;
@@ -86,9 +85,9 @@ const { main }: { main: NavigationLink[] } = menu;
         ))
       }
     </ul>
-    <div class="order-1 ml-auto flex items-center md:order-2 md:ml-0">
+    <div class="hidden order-1 ml-auto md:flex items-center md:order-2 md:ml-0 md:min-w-[150px] lg:min-w-[200px]">
       <a
-        class="btn btn-primary z-0 py-[14px]"
+        class="btn btn-primary z-0 py-[14px] ml-auto"
         href="/contact"
       >
         Get Started

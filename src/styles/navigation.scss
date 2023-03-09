@@ -10,8 +10,8 @@
 .navbar-brand {
   @apply text-xl font-semibold text-dark;
 
-  image {
-    @apply max-h-full max-w-full;
+  img {
+    @apply max-h-full max-w-full object-contain;
   }
 }
 
@@ -24,7 +24,7 @@
 }
 
 .nav-item {
-  @apply lg:mx-3;
+  // @apply lg:mx-3;
 
   select:focus {
     box-shadow: none;
