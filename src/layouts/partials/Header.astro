@@ -1,6 +1,7 @@
 ---
 import Logo from "@components/Logo.astro";
 import menu from "@config/menu.json";
+import {nav_button} from '@config/config.json'
 
 export interface ChildNavigationLink {
   name: string;
@@ -85,13 +86,14 @@ const { main }: { main: NavigationLink[] } = menu;
         ))
       }
     </ul>
-    <div class="hidden order-1 ml-auto md:flex items-center md:order-2 md:ml-0 md:min-w-[150px] lg:min-w-[200px]">
+    {nav_button.enable && <div class="hidden order-1 ml-auto md:flex items-center md:order-2 md:ml-0 md:min-w-[150px] lg:min-w-[200px]">
       <a
         class="btn btn-primary z-0 py-[14px] ml-auto"
-        href="/contact"
+        href={nav_button.link}
       >
-        Get Started
+        {nav_button.label}
       </a>
-    </div>
+    </div>}
+    
   </nav>
 </header>

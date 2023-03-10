@@ -4,8 +4,44 @@ import { defineCollection, z } from "astro:content";
 const homepage = defineCollection({
   schema: z.object({
     banner: z.object({
-      title: z.string().optional()
+      title: z.string().optional(),
+      content: z.string().optional(),
+      image: z.string().optional(),
+      button: z.object({
+        label: z.string(),
+        link: z.string().default("#"),
+        enable: z.boolean().default(true)
+      })
     }).optional(),
+    feature: z.object({
+      title: z.string().optional(),
+      features: z.array(z.object({name: z.string().optional(), icon: z.string().optional(), content: z.string().optional()})),
+    }).optional(),
+    services: z.array(z.object({
+      title: z.string().optional(),
+      content: z.string().optional(),
+      images: z.array(z.string()).optional(),
+      button: z.object({
+        label: z.string(),
+        link: z.string().default("#"),
+        enable: z.boolean().default(true)
+      }).optional()
+    })).optional(),
+    workflow: z.object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      image: z.string()
+    }).optional(),
+    call_to_action: z.object({
+      title: z.string().optional(),
+      content: z.string().optional(),
+      image: z.string(),
+      button: z.object({
+        label: z.string(),
+        link: z.string().default("#"),
+        enable: z.boolean().default(true)
+      }).optional()
+    }).optional()
   }),
 });
 

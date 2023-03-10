@@ -10,7 +10,7 @@ export const slugify = (content: string) => {
 };
 
 // markdownify
-export const markdownify = (content: string) => {
+export const markdownify = (content: string | undefined) => {
   if (!content) return null;
 
   return marked.parseInline(content);

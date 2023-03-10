@@ -22,7 +22,8 @@
     "react-icons": "^4.7.1",
     "react-lite-youtube-embed": "^2.3.52",
     "remark-collapse": "^0.1.2",
-    "remark-toc": "^8.0.1"
+    "remark-toc": "^8.0.1",
+    "swiper": "^9.1.0"
   },
   "devDependencies": {
     "@astrojs/react": "^2.0.2",

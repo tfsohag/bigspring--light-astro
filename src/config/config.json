@@ -12,15 +12,22 @@
   },
 
   "settings": {
-    "theme_switcher": true,
-    "default_theme": "system",
-    "pagination": 2,
-    "summary_length": 200
+    "pagination": 4,
+    "summary_length": 200,
+    "blog_folder": "blogs"
+  },
+
+  "nav_button": {
+    "enable": true,
+    "label": "Get Started",
+    "link": "/contact"
   },
 
   "params": {
-    "contact_form_action": "#",
-    "copyright": "Copyright © 2023 a theme by [themefisher](https://themefisher.com)"
+    "contact_form_action": "",
+    "tag_manager_id": "",
+    "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
+    "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
   },
 
   "metadata": {
