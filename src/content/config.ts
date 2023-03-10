@@ -94,10 +94,70 @@ const pagesCollection = defineCollection({
   }),
 });
 
+//Contact collection schema
+const contactCollection = defineCollection({
+  schema: z.object({
+    title: z.string().optional(),
+    layout: z.string().optional(),
+    draft: z.boolean().optional(),
+    info: z.object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      contacts: z.array(z.string()).optional()
+    }).optional()
+  })
+})
+
+//faq page schema
+const faqSchema = defineCollection({
+  schema: z.object({
+    title: z.string().optional(),
+    layout: z.string().optional(),
+    draft: z.boolean().optional(),
+    faqs: z.array(z.object({
+      title: z.string(),
+      answer: z.string(),
+    })).optional()
+  })
+})
+
+//pricing page schema
+const pricingSchema = defineCollection({
+  schema: z.object({
+    title: z.string().optional(),
+    layout: z.string().optional(),
+    draft: z.boolean().optional(),
+    plans: z.array(z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      price: z.number(),
+      recommended: z.boolean().optional(),
+      type: z.string(),
+      features: z.array(z.string()).optional(),
+      button: z.object({
+        label: z.string(),
+        link: z.string().default("#"),
+        enable: z.boolean().default(true)
+      })
+    })).optional(),
+    call_to_action: z.object({
+      title: z.string().optional(),
+      content: z.string().optional(),
+      image: z.string(),
+      button: z.object({
+        label: z.string(),
+        link: z.string().default("#"),
+        enable: z.boolean().default(true)
+      }).optional()
+    }).optional()
+  })
+})
 // Export collections
 export const collections = {
   homepage: homepage,
   posts: postsCollection,
   pages: pagesCollection,
   authors: authorsCollection,
+  contacts: contactCollection,
+  faq_page: faqSchema
 };

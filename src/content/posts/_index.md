@@ -1,3 +1,4 @@
 ---
-title: "Blog Posts"
+title: "Latest news"
+description: "this is meta description"
 ---

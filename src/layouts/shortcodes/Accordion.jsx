@@ -4,7 +4,7 @@ const Accordion = ({ title, children, className }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className={` border border-border ${className}`}>
+    <div className={` rounded border border-border ${className}`}>
       <button
         className="relative block w-full bg-theme-light px-4 py-3 text-left text-dark"
         onClick={() => setShow(!show)}
