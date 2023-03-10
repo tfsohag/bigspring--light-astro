@@ -158,6 +158,6 @@ export const collections = {
   posts: postsCollection,
   pages: pagesCollection,
   authors: authorsCollection,
-  contacts: contactCollection,
+  contact: contactCollection,
   faq_page: faqSchema
 };
