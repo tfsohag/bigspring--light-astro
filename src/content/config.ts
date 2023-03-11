@@ -95,7 +95,7 @@ const pagesCollection = defineCollection({
 });
 
 //Contact collection schema
-const contactCollection = defineCollection({
+const contact_page = defineCollection({
   schema: z.object({
     title: z.string().optional(),
     layout: z.string().optional(),
@@ -109,7 +109,7 @@ const contactCollection = defineCollection({
 })
 
 //faq page schema
-const faqSchema = defineCollection({
+const faq_page = defineCollection({
   schema: z.object({
     title: z.string().optional(),
     layout: z.string().optional(),
@@ -122,7 +122,7 @@ const faqSchema = defineCollection({
 })
 
 //pricing page schema
-const pricingSchema = defineCollection({
+const pricing_page = defineCollection({
   schema: z.object({
     title: z.string().optional(),
     layout: z.string().optional(),
@@ -153,11 +153,23 @@ const pricingSchema = defineCollection({
   })
 })
 // Export collections
+export interface PageData {
+  homePage: string,
+  posts: string,
+  pages: string,
+  authors: string,
+  contact: string,
+  faq: string,
+  pricing: string
+}
+
+
 export const collections = {
   homepage: homepage,
   posts: postsCollection,
   pages: pagesCollection,
   authors: authorsCollection,
-  contact: contactCollection,
-  faq_page: faqSchema
+  contact: contact_page,
+  faq: faq_page,
+  pricing: pricing_page
 };

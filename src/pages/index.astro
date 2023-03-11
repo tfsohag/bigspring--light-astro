@@ -1,19 +1,13 @@
 ---
 import Base from "@layouts/Base.astro";
-import Post from "@layouts/partials/Post.astro";
-import { getSinglePage } from "@lib/contentParser.astro";
-import { sortByDate } from "@lib/utils/sortFunctions";
 import { markdownify } from "@lib/utils/textConverter";
 import { Image } from "@astrojs/image/components";
 import { getEntryBySlug } from "astro:content";
-import { map } from "astro/zod";
 import Cta from "@layouts/components/Cta.astro";
 
 const homepage = await getEntryBySlug("homepage", "index");
 const { banner, feature, services, workflow, call_to_action } = homepage.data;
-const posts = await getSinglePage("posts");
-const sortPostByDate = sortByDate(posts);
-const showPost = 4;
+
 
 ---
 
@@ -59,12 +53,18 @@ const showPost = 4;
             class="feature-card rounded-xl bg-white p-5 pb-8 text-center"
           >
             {item.icon && (
-              <Image
+              // <Image
+              //   class="mx-auto"
+              //   src={item.icon}
+              //   width={30}
+              //   height={30}
+              //   alt=""
+              // />
+              <img 
                 class="mx-auto"
                 src={item.icon}
                 width={30}
                 height={30}
-                alt=""
               />
             )}
             <div class="mt-4">
@@ -147,7 +147,7 @@ const showPost = 4;
   })}
 
   <script>
-  import Swiper, {Autoplay, Pagination} from 'swiper';
+    import Swiper, {Autoplay, Pagination} from 'swiper';
     new Swiper('.service-carousel .swiper', {
       modules: [Pagination, Autoplay],
       autoplay: {
@@ -172,7 +172,7 @@ const showPost = 4;
       src={workflow!.image}
       alt="workflow image"
       width={1920}
-      height={296}
+      height={414}
     />
   </section>
 

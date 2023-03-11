@@ -1,10 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
-import { getSinglePage } from "@lib/contentParser.astro";
-import similerItems from "@lib/utils/similarItems";
 import { markdownify } from "@lib/utils/textConverter";
 
-const posts = await getSinglePage("posts");
 const { post } = Astro.props;
 const { Content } = await post.render();
 const { title, image } =

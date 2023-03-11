@@ -3,21 +3,9 @@ import Base from "@layouts/Base.astro"
 import Cta from "@layouts/components/Cta.astro";
 import { getEntryBySlug } from "astro:content";
 
-const entry = await getEntryBySlug('pricing', 'pricing');
+const entry = await getEntryBySlug('pricing', 'index');
 const {title, plans, call_to_action} = entry.data;
 
-export interface Plan {
-    title: string,
-    subtitle: string,
-    price: number,
-    features: string[],
-    recommended?: boolean,
-    type:string,
-    button: {
-        label: string,
-        link: string,
-    }
-}
 ---
 
 <Base>
@@ -25,7 +13,7 @@ export interface Plan {
         <div class="container">
           <h1 class="text-center font-normal">{title}</h1>
           <div class="section row -mt-10 justify-center md:mt-0">
-            {plans.map((plan:Plan, index:number) => (
+            {plans?.map((plan) => (
               <div
                 class={`col-12 md:col-4 ${
                   !plan.recommended ? "lg:px-0" : "col-recommended"
@@ -41,7 +29,7 @@ export interface Plan {
                     {plan.subtitle}
                   </h5>
                   <ul class="mt-5">
-                    {plan.features.map((feature, index) => (
+                    {plan?.features?.map((feature, index) => (
                       <li class="mb-[10px] leading-5">
                         {feature}
                       </li>
